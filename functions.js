@@ -3,6 +3,10 @@
  * @param {number} n
  * @return {string} the number as a string
  */
+function numberToString(number){
+  return number.toString();
+
+}
 
 
 /**
@@ -11,6 +15,9 @@
  * @return {number}
  */
 
+function increase(number){
+  return number + 1;
+}
 
 /**
  * Subtracts one from a given number.
@@ -18,6 +25,9 @@
  * @return {number}
  */
 
+function decrease(number) {
+  return number - 1;
+}
 
 /**
  * Adds two numbers.
@@ -26,6 +36,9 @@
  * @return {number} the sum
  */
 
+function add(x,y){
+  return x + y;
+}
 
 /**
  * Subtracts the second number from the first.
@@ -34,6 +47,9 @@
  * @return {number} the difference
  */
 
+function subtract(x,y){
+  return x-y;
+}
 
 /**
  * Multiplies two numbers.
@@ -42,6 +58,9 @@
  * @return {number} the product
  */
 
+function multiply(x,y){
+  return x*y;
+}
 
 /**
  * Divides the first number by the second.
@@ -50,6 +69,9 @@
  * @return {number} the quotient
  */
 
+function divide(x,y){
+  return x/y;
+}
 
 /**
  * Multiplies a number by itself.
@@ -57,6 +79,9 @@
  * @return {number} squared
  */
 
+function square(x){
+  return x*x;
+}
 
 /**
  * Performs a mathematical operation on two numbers.
@@ -67,6 +92,23 @@
  * @return {number} the result
  */
 
+function calculate(operation,x,y){
+  if(operation==="add"){
+    console.log(x + " + " + y + " = " + (x+y));
+  }
+  else if (operation === "subtract"){
+    console.log(x + " - " + y + " = " + (x-y));
+  }
+  else if (operation === "multiply"){
+    console.log(x + " * " + y + " = " + (x*y));
+  }
+  else if (operation === "divide"){
+    console.log(x + " / " + y + " = " + (x/y));
+  }
+  else{
+    console.log("For the operation please choose one of the follow choices for your operation: 'add', 'subtract', 'multiply', 'divide'");
+  }
+}
 
 /**
  * Returns true if `a` is greater than `b`.
@@ -75,6 +117,14 @@
  * @return {boolean} `a` is larger than `b`
  */
 
+function isGreaterThan(a,b){
+  if(a>b){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /**
  * Returns true if `a` is less than `b`.
@@ -83,6 +133,14 @@
  * @return {boolean} `a` is smaller than `b`
  */
 
+function isLessThan(a,b){
+  if(a<b){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 /**
  * Returns true if `a` and `b` are equal.
@@ -91,6 +149,14 @@
  * @return {boolean} the numbers are equal
  */
 
+function areEqual(a,b){
+  if(a===b){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 /**
  * Returns the smallest value of two numbers.
@@ -99,6 +165,9 @@
  * @return {number} the smallest number
  */
 
+function minimum(x,y){
+  return Math.min(x,y);
+}
 
 /**
  * Returns the largest value of two numbers.
@@ -107,6 +176,9 @@
  * @return {number} the largest number
  */
 
+function maximum(x,y){
+  return Math.max(x,y);
+}
 
 /**
  * Returns true if `n` is even.
@@ -114,6 +186,14 @@
  * @return {boolean} the number is even
  */
 
+function isEven(n){
+  if(n%2===0){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 /**
  * Returns true if `n` is odd.
@@ -121,6 +201,14 @@
  * @return {boolean} the number is odd
  */
 
+function isOdd(n){
+  if(n%2===1){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 /**
  * Returns a letter grade.
@@ -134,6 +222,30 @@
  * @return {string} the score represented as a letter grade
  */
 
+function letterGrade(score,total){
+  if(typeof score && typeof total === "number"){
+    var percentage = score/total;
+    if(100>=percentage>=90){
+      return "A";
+    }
+    else if(89>=percentage>=80){
+      return "B";
+    }
+    else if(79>=percentage>=70){
+      return "C";
+    }
+    else if(69>= percentage>=60){
+      return "D";
+    }
+    else if(59>= percentage >=0){
+      return "F";
+    }
+
+    else {
+      return "I think I need to recheck your score!";
+    }
+  }
+}
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -143,6 +255,17 @@
  * @return {object} restaurant
  */
 
+function incrementReviews(restaurant){
+  if(restaurant.reviews===true){
+    restaurant.reviews++;
+    return restaurant;
+  }
+  else {
+    restaurant.reviews = 1;
+    return restaurant;
+  }
+}
+
 
 /**
  * Joins two strings with a space.
@@ -151,6 +274,9 @@
  * @return {string} joined the words joined with a space
  */
 
+function combine(word1,word2){
+  return word1 + " " + word2;
+}
 
 /**
  * Returns a circle object with the properties `circumference` and `area`.
@@ -160,3 +286,8 @@
  * @return {object} circle
  */
 
+function circle(radius){
+  circle.circumference = 2 * Math.PI * radius;
+  circle.area = (radius * radius) * Math.PI;
+  return circle;
+}
