@@ -202,7 +202,7 @@ function isEven(n){
  */
 
 function isOdd(n){
-  if(n%2===1){
+  if(n%2!==0){
     return true;
   }
   else{
@@ -224,20 +224,20 @@ function isOdd(n){
 
 function letterGrade(score,total){
   if(typeof score && typeof total === "number"){
-    var percentage = score/total;
-    if(100>=percentage>=90){
+    var p = (score/total);
+    if(p>=.9){
       return "A";
     }
-    else if(89>=percentage>=80){
+    else if(p>=.80){
       return "B";
     }
-    else if(79>=percentage>=70){
+    else if(p>=.70){
       return "C";
     }
-    else if(69>= percentage>=60){
+    else if(p>=.60){
       return "D";
     }
-    else if(59>= percentage >=0){
+    else if(p<=.59){
       return "F";
     }
 
@@ -245,7 +245,11 @@ function letterGrade(score,total){
       return "I think I need to recheck your score!";
     }
   }
+  else{
+    return "I think i need to check your grades again";
+  }
 }
+
 
 /**
  * Checks if a `restaurant` object has a `reviews` property.
@@ -256,15 +260,17 @@ function letterGrade(score,total){
  */
 
 function incrementReviews(restaurant){
-  if(restaurant.reviews===true){
+  if(restaurant.reviews>0===true){
     restaurant.reviews++;
     return restaurant;
   }
+
   else {
     restaurant.reviews = 1;
     return restaurant;
   }
 }
+
 
 
 /**
@@ -286,8 +292,9 @@ function combine(word1,word2){
  * @return {object} circle
  */
 
-function circle(radius){
-  circle.circumference = 2 * Math.PI * radius;
-  circle.area = (radius * radius) * Math.PI;
+function createCircle(radius){
+  var circle = {};
+  circle.circumference = 2 * Math.PI *radius;
+  circle.area = Math.PI * (radius * radius);
   return circle;
 }
