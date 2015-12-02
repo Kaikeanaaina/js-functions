@@ -95,15 +95,19 @@ function square(x){
 function calculate(operation,x,y){
   if(operation==="add"){
     console.log(x + " + " + y + " = " + (x+y));
+    return x+y;
   }
   else if (operation === "subtract"){
     console.log(x + " - " + y + " = " + (x-y));
+    return x-y;
   }
   else if (operation === "multiply"){
     console.log(x + " * " + y + " = " + (x*y));
+    return x*y;
   }
   else if (operation === "divide"){
     console.log(x + " / " + y + " = " + (x/y));
+    return x/y;
   }
   else{
     console.log("For the operation please choose one of the follow choices for your operation: 'add', 'subtract', 'multiply', 'divide'");
